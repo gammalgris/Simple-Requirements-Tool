@@ -69,6 +69,17 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="srt"/>
+   <hash n="oracle.ide.model.DependencyConfiguration">
+      <list n="dependencyList">
+         <hash>
+            <hash n="dependable">
+               <url n="sourceOwnerURL" path="../Simple Requirements Tool.jws"/>
+               <url n="sourceURL" path="../Core/Core.jpr"/>
+            </hash>
+            <value n="recognizerId" v="oracle.jdeveloper.library"/>
+         </hash>
+      </list>
+   </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="Java"/>
@@ -79,13 +90,82 @@
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
-         <list n="pattern-filters">
-            <string v="+**"/>
+         <list n="constituent-sets">
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="properties/"/>
+               </list>
+            </hash>
          </list>
-         <list n="url-path">
-            <url path="src/"/>
+         <list n="url-path"/>
+      </hash>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="Jmul-1.9.10"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Junit-4.13"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="../../Libraries/jmul/jmul-1.9.10.jar" jar-entry=""/>
+                  <url path="../../Libraries/jmul/properties/"/>
+               </list>
+               <value n="description" v="Jmul-1.9.10"/>
+               <list n="docPath">
+                  <url path="../../Libraries/jmul/jmul-1.9.10-javadoc.jar" jar-entry=""/>
+               </list>
+               <value n="id" v="Jmul-1.9.10"/>
+               <list n="sourcePath">
+                  <url path="../../Libraries/jmul/jmul-1.9.10-sources.jar" jar-entry=""/>
+               </list>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../../Libraries/JUnit/junit-4.13.jar" jar-entry=""/>
+                  <url path="../../Libraries/JUnit/hamcrest-core-1.3.jar" jar-entry=""/>
+               </list>
+               <value n="description" v="Junit-4.13"/>
+               <list n="docPath">
+                  <url path="../../Libraries/JUnit/junit-4.13-javadoc.jar" jar-entry=""/>
+                  <url path="../../Libraries/JUnit/hamcrest-core-1.3-javadoc.jar" jar-entry=""/>
+               </list>
+               <value n="id" v="Junit-4.13"/>
+               <list n="sourcePath">
+                  <url path="../../Libraries/JUnit/junit-4.13-sources.jar" jar-entry=""/>
+                  <url path="../../Libraries/JUnit/hamcrest-core-1.3-sources.jar" jar-entry=""/>
+               </list>
+            </hash>
          </list>
       </hash>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="Jmul-1.9.10"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Junit-4.13"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>

@@ -79,15 +79,63 @@
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="javaContentSet">
-         <list n="pattern-filters">
-            <string v="+**"/>
+         <list n="constituent-sets">
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="properties/"/>
+               </list>
+            </hash>
          </list>
-         <list n="url-path">
-            <url path="src/"/>
+         <list n="url-path"/>
+      </hash>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <list n="exportedReferences">
+         <hash>
+            <value n="id" v="Jmul-1.9.10"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="../../Libraries/jmul/jmul-1.9.10.jar" jar-entry=""/>
+                  <url path="../../Libraries/jmul/properties/"/>
+               </list>
+               <value n="description" v="Jmul-1.9.10"/>
+               <list n="docPath">
+                  <url path="../../Libraries/jmul/jmul-1.9.10-javadoc.jar" jar-entry=""/>
+               </list>
+               <value n="id" v="Jmul-1.9.10"/>
+               <list n="sourcePath">
+                  <url path="../../Libraries/jmul/jmul-1.9.10-sources.jar" jar-entry=""/>
+               </list>
+            </hash>
          </list>
       </hash>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="Jmul-1.9.10"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path="classes/"/>
+   </hash>
+   <hash n="ResourceBundleOptions">
+      <list n="RegisteredResourceBundles"/>
    </hash>
 </jpr:project>

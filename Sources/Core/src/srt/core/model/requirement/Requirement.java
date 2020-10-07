@@ -33,15 +33,58 @@
 package srt.core.model.requirement;
 
 
-import java.util.Set;
+import java.util.List;
+
+import srt.core.id.RequirementID;
 
 
+/**
+ * This interface describes a requirement. A requirement is divided into sections which
+ * describe various aspects of the requirement.
+ *
+ * @author Kristian Kutin
+ */
 public interface Requirement extends Iterable<Section> {
 
-    Set<String> getSectionNames();
+    /**
+     * Returns all section names.
+     *
+     * @return all section names
+     */
+    List<String> getSectionNames();
 
-    Section getSection(String aSectionName);
+    /**
+     * Returns the name of the section at the specified index position.
+     *
+     * @param anIndex
+     *        an index
+     *
+     * @return a section name
+     */
+    String getSectionName(int anIndex);
 
+    /**
+     * Returns the section at the specified index position.
+     *
+     * @param anIndex
+     *        an index
+     *
+     * @return a section
+     */
+    Section getSection(int anIndex);
+
+    /**
+     * Returns the number of sections.
+     *
+     * @return a section count
+     */
     int sections();
+
+    /**
+     * Returns the ID of this requirement.
+     *
+     * @return an ID or <code>null</code> if no ID was assigned yet
+     */
+    RequirementID getID();
 
 }

@@ -30,30 +30,16 @@
  * $Id$
  */
 
-package srt.core.model.tree;
+package srt.core.id;
+
+
+import jmul.misc.id.ID;
 
 
 /**
- * This interface describes a requirement tree. Requirements are arramnged in a
- * tree structure where a requirement can have a parent requirement and several
- * derived requirements or elaborations.
+ * This interface describes an ID.
  *
  * @author Kristian Kutin
  */
-public interface RequirementTree {
-
-    /**
-     * Returns the root node.
-     *
-     * @return a root node
-     */
-    RequirementNode getRootNode();
-
-    /**
-     * Returns the maximum depth of the tree.
-     *
-     * @return a tree depth
-     */
-    int getMaxDepth();
-
+public interface RequirementID extends ID {
 }

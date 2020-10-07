@@ -30,30 +30,52 @@
  * $Id$
  */
 
-package srt.core.model.tree;
+package srt.core.model.requirement;
 
 
 /**
- * This interface describes a requirement tree. Requirements are arramnged in a
- * tree structure where a requirement can have a parent requirement and several
- * derived requirements or elaborations.
+ * This interface describes a modifiable requirement.
  *
  * @author Kristian Kutin
  */
-public interface RequirementTree {
+public interface ModifiableRequirement extends Requirement {
 
     /**
-     * Returns the root node.
+     * Apends a new section at the end.
      *
-     * @return a root node
+     * @param aSection
+     *        a section
      */
-    RequirementNode getRootNode();
+    void addSection(Section aSection);
 
     /**
-     * Returns the maximum depth of the tree.
+     * Removes the section at the specified index.
      *
-     * @return a tree depth
+     * @param anIndex
+     *        an index
+     *
+     * @return the section which has been removed
      */
-    int getMaxDepth();
+    Section removeSection(int anIndex);
+
+    /**
+     * Replaces the section at the specified index.
+     *
+     * @param anIndex
+     *        an index
+     *
+     * @return the section which has been replaced
+     */
+    Section replaceSection(int anIndex);
+
+    /**
+     * Inserts a section at the specified index.
+     *
+     * @param anIndex
+     *        an index
+     * @param aSection
+     *        the new section
+     */
+    void insertSection(int anIndex, Section aSection);
 
 }

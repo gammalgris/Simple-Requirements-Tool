@@ -30,30 +30,33 @@
  * $Id$
  */
 
-package srt.core.model.tree;
+package srt.gui;
 
 
 /**
- * This interface describes a requirement tree. Requirements are arramnged in a
- * tree structure where a requirement can have a parent requirement and several
- * derived requirements or elaborations.
+ * The main class which starts the requirement viewer.
  *
  * @author Kristian Kutin
  */
-public interface RequirementTree {
+public class RequirementEditor {
 
     /**
-     * Returns the root node.
-     *
-     * @return a root node
+     * The default constructor.
      */
-    RequirementNode getRootNode();
+    private RequirementEditor() {
+
+        throw new UnsupportedOperationException();
+    }
 
     /**
-     * Returns the maximum depth of the tree.
+     * Starts the requirement editor.
      *
-     * @return a tree depth
+     * @param args
+     *        all command line arguments
      */
-    int getMaxDepth();
+    public static void main(String[] args) {
+
+        //TODO
+    }
 
 }

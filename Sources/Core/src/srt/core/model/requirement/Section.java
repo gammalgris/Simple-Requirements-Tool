@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: GPL-3.0
- * 
- * 
+ *
+ *
  * Simple Requirements Tool
  *
  * SRT is a tool for managing requirements.
@@ -33,5 +33,29 @@
 package srt.core.model.requirement;
 
 
+import jmul.misc.text.Text;
+
+
+/**
+ * This interface describes a requirement section. A section has a section name or title and
+ * contains a description text.
+ *
+ * @author Kristian Kutin
+ */
 public interface Section {
+
+    /**
+     * Returns the section name.
+     *
+     * @return a section name
+     */
+    String getSectionName();
+
+    /**
+     * Returns the description text.
+     *
+     * @return a text
+     */
+    Text getSectionText();
+
 }

@@ -30,8 +30,13 @@
  * $Id$
  */
 
-package srt.core;
+package srt.core.model.tree;
 
 
-public interface RequirementWriter {
+/**
+ * This interface describes a modifiable requirement node.
+ *
+ * @author Kristian Kutin
+ */
+public interface ModifiableRequirementNode extends RequirementNode {
 }

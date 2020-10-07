@@ -34,26 +34,20 @@ package srt.core.model.tree;
 
 
 /**
- * This interface describes a requirement tree. Requirements are arramnged in a
- * tree structure where a requirement can have a parent requirement and several
- * derived requirements or elaborations.
+ * This interface describes a modifiable requirement tree.
  *
  * @author Kristian Kutin
  */
-public interface RequirementTree {
+public interface ModifiableRequirementTree extends RequirementTree {
 
     /**
-     * Returns the root node.
+     * Replaces the root node with hte specified root node.
      *
-     * @return a root node
-     */
-    RequirementNode getRootNode();
-
-    /**
-     * Returns the maximum depth of the tree.
+     * @param aRequirementNode
+     *        a requirement node
      *
-     * @return a tree depth
+     * @return the former requirement node
      */
-    int getMaxDepth();
+    RequirementNode replaceRootNode(RequirementNode aRequirementNode);
 
 }

@@ -30,30 +30,24 @@
  * $Id$
  */
 
-package srt.core.model.tree;
+package srt.core.model.requirement;
 
 
 /**
- * This interface describes a requirement tree. Requirements are arramnged in a
- * tree structure where a requirement can have a parent requirement and several
- * derived requirements or elaborations.
+ *  This interface describes a modifiable requirement section.
  *
- * @author Kristian Kutin
+ *  @author Kristian Kutin
  */
-public interface RequirementTree {
+public interface ModifiableSection extends Section {
 
     /**
-     * Returns the root node.
+     * Replaces the section name with the specified section name.
      *
-     * @return a root node
-     */
-    RequirementNode getRootNode();
-
-    /**
-     * Returns the maximum depth of the tree.
+     * @param aSectionName
+     *        a new section name
      *
-     * @return a tree depth
+     * @return the former section name
      */
-    int getMaxDepth();
+    String renameSection(String aSectionName);
 
 }

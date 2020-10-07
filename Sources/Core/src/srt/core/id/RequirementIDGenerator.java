@@ -30,30 +30,21 @@
  * $Id$
  */
 
-package srt.core.model.tree;
+package srt.core.id;
 
 
 /**
- * This interface describes a requirement tree. Requirements are arramnged in a
- * tree structure where a requirement can have a parent requirement and several
- * derived requirements or elaborations.
+ * This interface deswcribes an entity which generates unique requirement IDs.
  *
  * @author Kristian Kutin
  */
-public interface RequirementTree {
+public interface RequirementIDGenerator {
 
     /**
-     * Returns the root node.
+     * The method creates a new requirement ID.
      *
-     * @return a root node
+     * @return a requirement ID
      */
-    RequirementNode getRootNode();
-
-    /**
-     * Returns the maximum depth of the tree.
-     *
-     * @return a tree depth
-     */
-    int getMaxDepth();
+    RequirementID generateID();
 
 }

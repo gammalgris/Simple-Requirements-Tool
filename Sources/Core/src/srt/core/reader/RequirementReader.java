@@ -30,30 +30,46 @@
  * $Id$
  */
 
-package srt.core.model.tree;
+package srt.core.reader;
+
+
+import java.io.File;
+import java.io.IOException;
+
+import srt.core.model.requirement.Requirement;
 
 
 /**
- * This interface describes a requirement tree. Requirements are arramnged in a
- * tree structure where a requirement can have a parent requirement and several
- * derived requirements or elaborations.
+ * This interface describes an entity which reads a requirement from a file.
  *
  * @author Kristian Kutin
  */
-public interface RequirementTree {
+public interface RequirementReader {
 
     /**
-     * Returns the root node.
+     * Reads a requirement from the specified file.
      *
-     * @return a root node
+     * @param aFilename
+     *        a relative or absolute path to a file
+     *
+     * @return a requirement
+     *
+     * @throws IOException
+     *         is thrown if an exception occurs while trying to access the file
      */
-    RequirementNode getRootNode();
+    Requirement readFrom(String aFilename) throws IOException;
 
     /**
-     * Returns the maximum depth of the tree.
+     * Reads a requirement fro, the specified file.
      *
-     * @return a tree depth
+     * @param aFile
+     *        a file object
+     *
+     * @return a requirement
+     *
+     * @throws IOException
+     *         is thrown if an exception occurs while trying to access the file
      */
-    int getMaxDepth();
+    Requirement readFrom(File aFile) throws IOException;
 
 }

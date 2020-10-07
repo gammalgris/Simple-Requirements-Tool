@@ -30,7 +30,7 @@
  * $Id$
  */
 
-package srt.core;
+package srt.core.writer;
 
 
 import java.io.File;
@@ -40,36 +40,36 @@ import srt.core.model.requirement.Requirement;
 
 
 /**
- * This interface describes an entity which reads a requirement from a file.
+ * This interface describes an entity that writes a requirement to a file.
  *
  * @author Kristian Kutin
  */
-public interface RequirementReader {
+public interface RequirementWriter {
 
     /**
-     * Reads a requirement from the specified file.
+     * Writes the specified requirement to the specified file.
      *
      * @param aFilename
-     *        a relative or absolute path to a file
-     *
-     * @return a requirement
+     *        the name of the output file
+     * @param aRequirement
+     *        a requirement
      *
      * @throws IOException
-     *         is thrown if an exception occurs while trying to access the file
+     *         is thrown if an error occurrs while trying to write to the file
      */
-    Requirement readFrom(String aFilename) throws IOException;
+    void writeTo(String aFilename, Requirement aRequirement) throws IOException;
 
     /**
-     * Reads a requirement fro, the specified file.
+     * Writes the specified requirement to the specified file.
      *
      * @param aFile
-     *        a file object
-     *
-     * @return a requirement
+     *        the output file
+     * @param aRequirement
+     *        a requirement
      *
      * @throws IOException
-     *         is thrown if an exception occurs while trying to access the file
+     *         is thrown if an error occurrs while trying to write to the file
      */
-    Requirement readFrom(File aFile) throws IOException;
+    void writeTo(File aFile, Requirement aRequirement) throws IOException;
 
 }

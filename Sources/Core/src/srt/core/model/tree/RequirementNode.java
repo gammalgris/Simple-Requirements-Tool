@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: GPL-3.0
- * 
- * 
+ *
+ *
  * Simple Requirements Tool
  *
  * SRT is a tool for managing requirements.
@@ -33,5 +33,59 @@
 package srt.core.model.tree;
 
 
+import srt.core.model.requirement.Requirement;
+
+
+/**
+ * This interface describes a requirement node.
+ *
+ * @author Kristian Kutin
+ */
 public interface RequirementNode {
+
+    /**
+     * Checks if this node has a parent node.
+     *
+     * @return <code>true</code> if this node has a parent node, else <code>false</code>
+     */
+    boolean hasParent();
+
+    /**
+     * Checks if this node has child nodes.
+     *
+     * @return <code>true</code> if this node has child nodes, else <code>false</code>
+     */
+    boolean hasChildren();
+
+    /**
+     * Returns the parent node of this node.
+     *
+     * @return the parent node or <code>null</code> if this node has no parent
+     */
+    RequirementNode getParent();
+
+    /**
+     * Returns the child node at the specified index.
+     *
+     * @param anIndex
+     *        an index
+     *
+     * @return a child node
+     */
+    RequirementNode getChild(int anIndex);
+
+    /**
+     * Returns the number of children this node has.
+     *
+     * @return a child count
+     */
+    int children();
+
+    /**
+     * Returns the requirement associated with this node.
+     *
+     * @return a requirement
+     */
+    Requirement getRequirement();
+
 }

@@ -33,61 +33,67 @@
 package srt.core.model.requirement;
 
 
-import java.util.List;
+import jmul.misc.text.Text;
 
-import srt.core.id.Identifiable;
+import jmul.checks.ParameterCheckHelper;
 
 
 /**
- * This interface describes a requirement. A requirement is divided into sections which
- * describe various aspects of the requirement.
+ * An implementation of a requirement section.
  *
  * @author Kristian Kutin
  */
-public interface Requirement extends Iterable<Section>, Identifiable {
+public class SectionImpl implements Section {
 
     /**
-     * Returns all section names.
-     *
-     * @return all section names
+     * Contains the section name.
      */
-    List<String> getSectionNames();
+    private final String sectionName;
 
     /**
-     * Returns the name of the section at the specified index position.
-     *
-     * @param anIndex
-     *        an index
-     *
-     * @return a section name
+     * Contains the section text.
      */
-    String getSectionName(int anIndex);
+    private final Text sectionText;
 
     /**
-     * Returns the section at the specified index position.
-     *
-     * @param anIndex
-     *        an index
-     *
-     * @return a section
-     */
-    Section getSection(int anIndex);
-
-    /**
-     * Returns the section with the specified section name.
+     * Creates a new section according to the specified parameters.
      *
      * @param aSectionName
      *        a section name
-     *
-     * @return a section
+     * @param aSectionText
+     *        a section text
      */
-    Section getSection(String aSectionName);
+    public SectionImpl(String aSectionName, Text aSectionText) {
+
+        super();
+
+        ParameterCheckHelper.checkStringParameter(aSectionName);
+        ParameterCheckHelper.checkObjectParameter(aSectionText);
+
+        sectionName = aSectionName;
+        sectionText = aSectionText;
+    }
 
     /**
-     * Returns the number of sections.
+     * Returns the section name.
      *
-     * @return a section count
+     * @return a section name
      */
-    int sections();
+    @Override
+    public String getSectionName() {
+
+        return sectionName;
+    }
+
+    /**
+     * Returns the description text.
+     *
+     * @return a text
+     */
+    @Override
+    public Text getSectionText() {
+
+        return sectionText;
+    }
 
 }

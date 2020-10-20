@@ -30,32 +30,9 @@
  * $Id$
  */
 
-package srt.core.model.tree;
-
-import srt.core.id.Identifiable;
+package srt.core.model.requirement.reference;
 
 
-/**
- * This interface describes a requirement tree. Requirements are arramnged in a
- * tree structure where a requirement can have a parent requirement and several
- * derived requirements or elaborations.
- *
- * @author Kristian Kutin
- */
-public interface RequirementTree extends Identifiable {
-
-    /**
-     * Returns the root node.
-     *
-     * @return a root node
-     */
-    RequirementNode getRootNode();
-
-    /**
-     * Returns the maximum depth of the tree.
-     *
-     * @return a tree depth
-     */
-    int getMaxDepth();
+public interface ImageReference extends Reference {
 
 }

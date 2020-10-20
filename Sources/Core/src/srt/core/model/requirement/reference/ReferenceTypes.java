@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: GPL-3.0
- * 
- * 
+ *
+ *
  * Simple Requirements Tool
  *
  * SRT is a tool for managing requirements.
@@ -30,8 +30,17 @@
  * $Id$
  */
 
-package srt.core.model.requirement;
+package srt.core.model.requirement.reference;
 
 
-public interface Reference {
+/**
+ * This enumeration contains all supported reference types.
+ *
+ * @author Kristian Kutin
+ */
+public enum ReferenceTypes {
+
+    TABLE,
+    IMAGE, ;
+
 }

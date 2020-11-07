@@ -33,25 +33,12 @@
 package srt.core.model.tree;
 
 
-import srt.core.model.requirement.Requirement;
-
-
 /**
- * This interface describes a modifiable requirement node.
+ * This interface describes a modifiable package node.
  *
  * @author Kristian Kutin
  */
-public interface ModifiableRequirementNode extends RequirementNode {
-
-    /**
-     * Replaces the requirement with the specified requirement.
-     *
-     * @param newRequirement
-     *        a new requirement
-     *
-     * @return the replaced Requirement
-     */
-    Requirement replaceRequirement(Requirement newRequirement);
+public interface ModifiablePackageNode extends PackageNode {
 
     /**
      * Adds the specified package node at the end.
@@ -80,5 +67,33 @@ public interface ModifiableRequirementNode extends RequirementNode {
      * @return the removed package node
      */
     PackageNode removePackageNode(int anIndex);
+
+    /**
+     * Adds the specified requirement node at the end.
+     *
+     * @param newRequirementNode
+     *        a new requirement node
+     */
+    void addRequirementNode(RequirementNode newRequirementNode);
+
+    /**
+     * Inserts the specified requirement node at the specified index.
+     *
+     * @param anIndex
+     *        an index (i.e. a number equal to zero or higher)
+     * @param newRequirementNode
+     *        a new requirement node
+     */
+    void insertRequirementNode(int anIndex, RequirementNode newRequirementNode);
+
+    /**
+     * Removes the requirement node at the specified index
+     *
+     * @param anIndex
+     *        an index (i.e. a number equal to zero or higher)
+     *
+     * @return the removed requirement node
+     */
+    RequirementNode removeRequirementNode(int anIndex);
 
 }

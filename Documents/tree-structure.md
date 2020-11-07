@@ -1,22 +1,22 @@
 
 <packages>
 	<requirement file="{file name}" id="{requirement id}"> <!-- parent requirement -->
-		<{directory name}>
+		<package name="{directory name}">
 			<requirement file="{file name}" id="{requirement id}"> <!-- child requirememnt -->
 				...
 			</requirement>
 			...
-		</{directory name}>
+		</package>
 	</requirement>
 
-	<{directory name}>
+	<package name="{directory name}">
 		<requirement file="{file name}" id="{requirement id}">
 			...
 		</requirement>
-		<{directory name}>
+		<package name="{directory name}">
 			...
-		</{directory name}>
+		</package>
 		...
-	</{directory name}>
+	</package>
 	...
 </packages>

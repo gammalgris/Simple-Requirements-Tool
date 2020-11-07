@@ -33,24 +33,16 @@
 package srt.core.model.tree;
 
 
-import srt.core.id.Identifiable;
-import srt.core.model.requirement.Requirement;
+import srt.core.id.RequirementID;
 import srt.core.model.tree.common.Named;
 
 
 /**
- * This interface describes a requirement node.
+ * This interface describes a special node which represents a package node.
  *
  * @author Kristian Kutin
  */
-public interface RequirementNode extends Named, Identifiable {
-
-    /**
-     * Returns the requirement associated with this node.
-     *
-     * @return a requirement
-     */
-    Requirement getRequirement();
+public interface PackageNode extends Named {
 
     /**
      * Returns all package nodes directly known to this package node.
@@ -92,5 +84,63 @@ public interface RequirementNode extends Named, Identifiable {
      * @return a package name
      */
     PackageNode getPackageNode(String aName);
+
+    /**
+     * Returns all requirement nodes directly known to this package node.
+     *
+     * @return all requirement nodes
+     */
+    RequirementNode[] getRequirementNodes();
+
+    /**
+     * Returns the number of all requirement nodes directly known to this package node.
+     *
+     * @return the number of all requirement nodes
+     */
+    int requirementNodes();
+
+    /**
+     * Returns the requirement node at the specified index.
+     *
+     * @param anIndex
+     *        an index (i.e. a number equal to zero or higher)
+     *
+     * @return a requirement node
+     */
+    RequirementNode getRequirementNode(int anIndex);
+
+    /**
+     * Returns the IDs of all requirement nodes directly known to this package node.
+     *
+     * @return the IDs of all requirement nodes
+     */
+    RequirementID[] getRequirementNodeIds();
+
+    /**
+     * Returns the requirement node with the specified ID.
+     *
+     * @param anId
+     *        an ID
+     *
+     * @return a requirement node
+     */
+    RequirementNode getRequirementNode(RequirementID anId);
+
+    /**
+     * Returns the file names of all requirement nodes directly known to this package node.
+     *
+     * @return the file names of all requirement nodes
+     */
+    String[] getRequirementNodeFiles();
+
+    /**
+     * Returns the requirement node with the specified ID.
+     *
+     * @param aFile
+     *        an file name (without directories)
+     *
+     * @return a requirement node
+     */
+    RequirementNode getRequirementNode(String aFile);
 
 }

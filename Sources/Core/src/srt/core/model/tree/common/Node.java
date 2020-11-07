@@ -30,55 +30,58 @@
  * $Id$
  */
 
-package srt.core.model.tree;
-
-
-import srt.core.model.requirement.Requirement;
+package srt.core.model.tree.common;
 
 
 /**
- * This interface describes a modifiable requirement node.
+ * This interface describes a generic node.
  *
  * @author Kristian Kutin
  */
-public interface ModifiableRequirementNode extends RequirementNode {
+public interface Node extends Named {
 
     /**
-     * Replaces the requirement with the specified requirement.
+     * Calculates the depth of the tree or subtree as seen by this node.
      *
-     * @param newRequirement
-     *        a new requirement
-     *
-     * @return the replaced Requirement
+     * @return a depth
      */
-    Requirement replaceRequirement(Requirement newRequirement);
+    int getDepth();
 
     /**
-     * Adds the specified package node at the end.
+     * Checks if this node has a parent node.
      *
-     * @param newPackageNode
-     *        a new package node
+     * @return <code>true</code> if this node has a parent node, else <code>false</code>
      */
-    void addPackageNode(PackageNode newPackageNode);
+    boolean hasParent();
 
     /**
-     * Inserts the specified package node at the specified index.
+     * Returns the parent node of this node.
+     *
+     * @return a parent node or <code>null</code> if no parent exists
+     */
+    Node getParent();
+
+    /**
+     * Returns the number of children this node has.
+     *
+     * @return the number of children
+     */
+    int children();
+
+    /**
+     * Returns the child node at the specified index.
      *
      * @param anIndex
-     *        an index (i.e. a number equal to zero or higher)
-     * @param newPackageNode
-     *        a new package node
+     *
+     * @return a child node
      */
-    void insertPackageNode(int anIndex, PackageNode newPackageNode);
+    Node getChild(int anIndex);
 
     /**
-     * Removes the package node at the specified index
+     * Checks if this node has child nodes.
      *
-     * @param anIndex
-     *        an index (i.e. a number equal to zero or higher)
-     *
-     * @return the removed package node
+     * @return <code>true</code> if this node has child nodes, else <code>false</code>
      */
-    PackageNode removePackageNode(int anIndex);
+    boolean hasChildren();
 
 }

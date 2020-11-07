@@ -30,24 +30,29 @@
  * $Id$
  */
 
-package srt.core.model.tree;
+package srt.core.model.tree.common;
 
 
 /**
- * This interface describes a modifiable requirement tree.
+ * This interface describes methods for nodes which provide an individual name and a name which depicts the
+ * underlying tree structure.
  *
  * @author Kristian Kutin
  */
-public interface ModifiableRequirementTree extends RequirementTree {
+public interface Named {
 
     /**
-     * Replaces the root node with hte specified root node.
+     * Returns the package name (i.e. directory name which represents this package).
      *
-     * @param newRootNode
-     *        a new root node
-     *
-     * @return the former root node
+     * @return a package name
      */
-    PackageNode replaceRootNode(PackageNode newRootNode);
+    String getName();
+
+    /**
+     * Returns the canonical package name (i.e. a concatenation of all package names).
+     *
+     * @return a canonical package name
+     */
+    String getCanonicalName();
 
 }
